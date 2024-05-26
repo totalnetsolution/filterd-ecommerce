@@ -1,5 +1,6 @@
 div = document.querySelector('div')
 const products = [
+    //Show All
     // Electronics
     {
         name: "Wireless Mouse",
@@ -225,14 +226,6 @@ const products = [
     }
 ];
 
-// console.log(products);
-
-// const electronics = products.filter(item => {
-//     return item.category === 'Electronics' && item.price > 100
-// }).filter((item)=>{
-//     return item.price < 200
-// })
-
 products.map((item)=>{
     div.innerHTML += `
     <h1>Product Name:${item.brand} + ${item.name}</h1>
@@ -241,19 +234,23 @@ products.map((item)=>{
     <hr/>
     `
 })
+const items =(btn) =>{
+    console.log(btn.innerHTML);
+    const itemList = products
+    
+    console.log(itemList);
+}
+const filteredItem = (btn) => {
+    div.innerHTML =' '
+    console.log(btn.innerHTML);
+const filtered = products.filter(item =>item.category === btn.innerHTML).map(item => {
+    div.innerHTML += `
+    <h1>Product Name:${item.brand} + ${item.name}</h1>
+    <h1>Category:${item.category}</h1>
+    <h1>Price:${item.price}</h1>
+    <hr/>
+    `
+})
+console.log(filtered);
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-// const electronics = products.filter(item => item.category === 'Electronics').filter(item => item.price > 100).filter(item => item.price < 200)
-
-// console.log(electronics);
