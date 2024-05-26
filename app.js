@@ -234,15 +234,9 @@ products.map((item)=>{
     <hr/>
     `
 })
-const items =(btn) =>{
-    console.log(btn.innerHTML);
-    const itemList = products
-    
-    console.log(itemList);
-}
+
 const filteredItem = (btn) => {
     div.innerHTML =' '
-    console.log(btn.innerHTML);
 const filtered = products.filter(item =>item.category === btn.innerHTML).map(item => {
     div.innerHTML += `
     <h1>Product Name:${item.brand} + ${item.name}</h1>
@@ -254,3 +248,17 @@ const filtered = products.filter(item =>item.category === btn.innerHTML).map(ite
 console.log(filtered);
 }
 
+
+
+const item =(btn) =>{  
+    div.innerHTML =' '
+    const filtered = products.map(item => {
+        div.innerHTML += `
+        <h1>Product Name:${item.brand} + ${item.name}</h1>
+        <h1>Category:${item.category}</h1>
+        <h1>Price:${item.price}</h1>
+        <hr/>
+        `
+    })
+    console.log(filtered);
+    }
